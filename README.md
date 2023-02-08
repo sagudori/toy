@@ -1,2 +1,2 @@
-# toy
-toy repository
+# READ ME
+this is toy project
