@@ -36,7 +36,7 @@ RUN mkdir -p /root/.ssh && \
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # 앱을 실행합니다.
-CMD service nginx start && service ssh start && pm2 list && pm2-runtime start ecosystem.config.js
+CMD service nginx start && service ssh start && pm2 start ecosystem.config.js --attach
 
 # 포트 3000을 노출합니다. (Node.js 앱이 3000번 포트에서 실행되는 경우)
 EXPOSE 22 3000
