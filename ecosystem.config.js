@@ -3,7 +3,7 @@ module.exports = {
       {
         name: 'nuxt-app',
         script: 'npm',
-        args: `start -c ${process.cwd()}/nuxt.config.js`,
+        args: 'start',
         instances: 4,
         exec_mode: 'cluster',
         env: {
