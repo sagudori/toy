@@ -12,13 +12,13 @@ RUN npm install -g pm2
 RUN npm install -g pnpm
 
 # npm 패키지를 설치합니다.
-RUN pnpm install
+RUN npm install
 
 # 앱 소스 코드를 복사합니다.
 COPY . . 
 
 # 앱을 빌드합니다.
-RUN pnpm build
+RUN npm run build
 
 # Nginx를 설치합니다.
 RUN apt-get update && apt-get install -y nginx && apt-get install -y vim && apt-get install -y git && apt-get install -y openssh-server
