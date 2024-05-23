@@ -28,8 +28,8 @@ module.exports = {
         // 'pre-deploy': 'echo "Deploying to production"',
         // 'pre-restart': 'echo "Restarting application"',
         // 'post-restart': 'echo "Application restarted"'
-        'pre-setup': 'mkdir -p /game/www/event-v2/source',
-        'post-deploy': 'npm install && npm run build && pm2 reload ecosystem.config.js --env production',
+        'pre-setup': 'mkdir -p /game/www/event-v2/source /game/www/event-v2/releases /game/www/event-v2/shared',
+        'post-deploy': 'cp /game/www/event-v2/ecosystem.config.js /game/www/event-v2/current/ecosystem.config.js && npm install && npm run build && pm2 reload ecosystem.config.js --env production',
         'post-restart': 'rm -rf /game/www/event-v2/source'
       }
     }
