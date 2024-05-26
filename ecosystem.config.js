@@ -2,12 +2,13 @@ module.exports = {
     apps: [
       {
         name: 'nuxt-app',
-        script: 'nuxt',
-        args: 'start',
-        instances: 4,
-        exec_mode: 'cluster',
-        max_restarts: 3,
-        watch: true,
+        script: './node_modules/nuxt/bin/nuxt.js',
+        args: `-c /game/www/event-v2/nuxt.config.js`,
+        cwd: '/game/www/event-v2',
+        instances: 3,
+        exec_mode: 'cluster_mode',
+        max_restarts: 2,
+        watch: false,
         ignore_watch: ['node_modules', 'logs'],
         env: {
           NODE_ENV: 'development'
